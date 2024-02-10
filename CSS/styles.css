@@ -1,8 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playball&display=swap");
+:root {
+  --main--font: shahrzad;
+  --main-color: #ffecd6;
+  --main-color-hover: #4cb9e7;
+
+  --secondry-color: #4ceaff;
+}
+
 * {
   margin: 0;
 }
+
 body {
+}
+nav {
+  z-index: 2;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+}
+nav ul {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  list-style: none;
+  font-family: var(--main--font);
+}
+
+nav ul li {
+  background-color: transparent;
+}
+nav ul li:hover {
+  background-color: var(--main-color-hover);
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--main-color);
+  display: inline-block;
+  padding: 20px;
+}
+
+nav ul li ul {
+  display: none;
+}
+
+nav ul li ul:hover {
+  display: flex;
+  flex-direction: column;
 }
 
 .heroh1 {
@@ -10,11 +55,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   z-index: 1;
-  color: rgb(76, 234, 255);
+  color: var(--main-color);
   font-family: "Great Vibes", cursive;
   font-size: 40px;
+  animation: faded 5s ease-in-out 0s infinite both;
 }
 
 .container {
@@ -78,6 +123,7 @@ body {
   position: relative;
   z-index: 1;
   padding-top: 10px;
+  font-family: var(--main--font);
 }
 .quote {
   border-radius: 30px;
@@ -87,6 +133,7 @@ body {
   margin: 20px auto;
   text-align: center;
   color: aliceblue;
+  font-family: var(--main--font);
 }
 
 .copyright {
@@ -97,6 +144,7 @@ body {
   margin: 20px auto;
   text-align: center;
   color: aliceblue;
+  font-family: var(--main--font);
 }
 
 .star {
@@ -203,5 +251,18 @@ body {
 @keyframes blink {
   50% {
     opacity: 0.6;
+  }
+}
+
+@keyframes faded {
+  0% {
+    color: var(--main-color);
+  }
+
+  50% {
+    color: var(--secondry-color);
+  }
+  100% {
+    color: var(--main-color);
   }
 }
