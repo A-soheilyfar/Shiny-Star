@@ -5,6 +5,18 @@
 body {
 }
 
+.heroh1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+  color: rgb(76, 234, 255);
+  font-family: "Great Vibes", cursive;
+  font-size: 40px;
+}
+
 .container {
   width: 100%;
   height: 100vh;
@@ -13,6 +25,16 @@ body {
   align-items: center;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c1231 100%);
   overflow: hidden;
+}
+
+.stars {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  transform: rotate(-45deg);
+  color: white;
 }
 .cat {
   padding: 30px;
@@ -27,30 +49,35 @@ body {
   height: 200px;
   background-color: aquamarine;
   border-radius: 30px;
-}
-.stars {
   position: relative;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  transform: rotate(-45deg);
-  color: white;
+  overflow: hidden;
 }
-.heroh1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
 
-  z-index: 1;
-  color: white;
-  font-family: "Great Vibes", cursive;
-  font-size: 40px;
+.itemimg {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  filter: grayscale(100%);
+  border-radius: 10px;
+  overflow: hidden;
 }
+.sad {
+  height: 250px;
+  overflow: hidden;
+}
+
+.itemimg:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+  transition: ease 0.5s;
+  border-radius: 20px;
+}
+
 .text {
   text-align: center;
+  position: relative;
+  z-index: 1;
+  padding-top: 10px;
 }
 .quote {
   border-radius: 30px;
@@ -77,7 +104,7 @@ body {
   --star-tail-length: 6em;
   --star-tail-height: 2px;
   --star-width: calc(var(--star-tail-length) / 6);
-  --fall-duration: 9s;
+  --fall-duration: 1s;
   --tail-fade-duration: var(--fall-duration);
   position: absolute;
   top: var(--top-offset);
@@ -101,7 +128,7 @@ body {
   --star-tail-length: 5.86em;
   --top-offset: 19.92vh;
   --fall-duration: 8.145s;
-  --fall-delay: 7.572s;
+  --fall-delay: 1s;
 }
 .star:nth-child(2) {
   --star-tail-length: 5.1em;
@@ -143,8 +170,7 @@ body {
   width: var(--star-width);
   height: 120%;
   background: linear-gradient(45deg, transparent, currentColor, transparent);
-  border-radius: inherit;
-  animation: blink 2s linear infinite;
+  animation: blink 1s linear alternate;
 }
 .star::before {
   transform: rotate(45deg);
