@@ -95,7 +95,6 @@ footer {
 }
 .main {
   position: relative;
-  height: 100vh;
   width: 100%;
 }
 .cat {
@@ -159,6 +158,38 @@ footer {
   text-align: center;
   color: aliceblue;
   font-family: var(--main--font);
+}
+@media (max-width: 980px) {
+  .star {
+    animation: fall var(--fall-duration) var(--fall-delay) linear alternate;
+  }
+  .cat {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+  }
+  .itemimg {
+    position: absolute;
+    object-fit: cover;
+  }
+  .box {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+  .item {
+    position: static;
+  }
+  nav {
+    position: absolute;
+  }
+
+  .copyright,
+  .quote {
+    width: 80%;
+  }
 }
 
 .star {
@@ -274,30 +305,5 @@ footer {
   }
   100% {
     color: var(--main-color);
-  }
-}
-
-@media (max-width: 980px) {
-  .star {
-    animation: fall var(--fall-duration) var(--fall-delay) linear alternate;
-  }
-  .cat {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    padding: 10px;
-    width: 100%;
-  }
-  .itemimg {
-    position: absolute;
-    object-fit: cover;
-  }
-  .box {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-  }
-  .item {
-    position: static;
   }
 }
