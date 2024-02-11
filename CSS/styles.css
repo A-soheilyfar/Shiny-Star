@@ -11,8 +11,6 @@
   margin: 0;
 }
 
-body {
-}
 nav {
   z-index: 2;
   position: fixed;
@@ -42,14 +40,28 @@ nav ul li a {
 }
 
 nav ul li ul {
-  display: none;
+  display: block;
+  opacity: 0;
+  overflow: hidden;
+  height: 20px;
+  z-index: -555;
 }
 
-nav ul li ul:hover {
-  display: flex;
+nav ul li .sub-menu :hover {
+  display: block;
+  position: relative;
+  top: 20px;
   flex-direction: column;
+  opacity: 100;
+  z-index: 5555;
+  height: 100px;
+  overflow: visible;
 }
 
+footer {
+  display: block;
+  position: static;
+}
 .heroh1 {
   position: absolute;
   top: 50%;
@@ -81,18 +93,21 @@ nav ul li ul:hover {
   transform: rotate(-45deg);
   color: white;
 }
+.main {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
 .cat {
   padding: 30px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 30vh;
 }
 
 .box {
   width: 300px;
   height: 200px;
-  background-color: aquamarine;
   border-radius: 30px;
   position: relative;
   overflow: hidden;
@@ -121,7 +136,6 @@ nav ul li ul:hover {
 .text {
   text-align: center;
   position: relative;
-  z-index: 1;
   padding-top: 10px;
   font-family: var(--main--font);
 }
@@ -167,11 +181,7 @@ nav ul li ul:hover {
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
     tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
 }
-@media screen and (max-width: 750px) {
-  .star {
-    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
-  }
-}
+
 .star:nth-child(1) {
   --star-tail-length: 5.86em;
   --top-offset: 19.92vh;
@@ -264,5 +274,30 @@ nav ul li ul:hover {
   }
   100% {
     color: var(--main-color);
+  }
+}
+
+@media (max-width: 980px) {
+  .star {
+    animation: fall var(--fall-duration) var(--fall-delay) linear alternate;
+  }
+  .cat {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+  }
+  .itemimg {
+    position: absolute;
+    object-fit: cover;
+  }
+  .box {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+  .item {
+    position: static;
   }
 }
