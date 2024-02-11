@@ -160,6 +160,9 @@ footer {
   font-family: var(--main--font);
 }
 @media (max-width: 980px) {
+  .heroh1 {
+    font-size: 25px;
+  }
   .star {
     animation: fall var(--fall-duration) var(--fall-delay) linear alternate;
   }
